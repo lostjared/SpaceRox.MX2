@@ -1278,7 +1278,7 @@ private:
 int main(int argc, char **argv) {
     Arguments args = proc_args(argc, argv);
     try {
-        SpaceRoxWindow window(args.path, args.width, args.height, true);
+        SpaceRoxWindow window(args.path, args.width, args.height, args.fullscreen);
         window.initVulkan();
         window.loop();
         window.cleanup();
