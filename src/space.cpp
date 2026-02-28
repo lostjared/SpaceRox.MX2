@@ -117,6 +117,7 @@ public:
     SpaceRoxWindow(const std::string &path, int wx, int wy, bool full)
         : mx::VKWindow("-[ SpaceRox - Vulkan ]-", wx, wy, full) {
         setPath(path);
+	enableControllerInput();
         srand(static_cast<unsigned>(time(nullptr)));
     }
     virtual ~SpaceRoxWindow() {}
@@ -1271,8 +1272,6 @@ private:
         printText("Press SPACE to begin", toScreenX(215), toScreenY(195), {255, 255, 0, 255});
     }
 };
-
-
 
 
 int main(int argc, char **argv) {
