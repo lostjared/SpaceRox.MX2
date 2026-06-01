@@ -22,6 +22,7 @@ find_package(SDL2_mixer REQUIRED)
 if(NOT MINGW)
 	find_package(Vulkan REQUIRED)
 endif()
+find_package(Threads REQUIRED)
 find_package(libmx2 REQUIRED)
 
 file(GLOB SPACE_ROX_SOURCES CONFIGURE_DEPENDS
@@ -42,7 +43,7 @@ if(MINGW)
 	target_link_libraries(SpaceRox PRIVATE
 		SDL2::SDL2main
 		libmx2::mx
-		libmx2::mxvk
+		libmx2::mx_vk
 		SDL2::SDL2
 		SDL2_ttf::SDL2_ttf
 		SDL2_mixer::SDL2_mixer
@@ -50,7 +51,7 @@ if(MINGW)
 else()
 	target_link_libraries(SpaceRox PRIVATE
 		libmx2::mx
-		libmx2::mxvk
+		libmx2::mx_vk
 		SDL2::SDL2
 		SDL2_ttf::SDL2_ttf
 		SDL2_mixer::SDL2_mixer
